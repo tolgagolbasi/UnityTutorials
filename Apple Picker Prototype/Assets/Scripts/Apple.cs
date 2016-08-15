@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class Apple : MonoBehaviour {
+	
+	public static float bottomY = -20;
 
 	// Use this for initialization
 	void Start () {
@@ -10,6 +12,8 @@ public class Apple : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if(transform.position.y <= -20) {
+			Destroy (this.gameObject);
+		}
 	}
 }
