@@ -1,7 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Basket : MonoBehaviour {
+
+	public Text scoreText;
+	void Start(){
+		GameObject scoreGO = GameObject.Find ("ScoreCounter");
+		scoreText = scoreGO.GetComponent<Text>();
+		scoreText.text = "0";
+	}
 
 	void Update () {
 		// Get the current screen position of the mouse from Input
@@ -23,6 +31,14 @@ public class Basket : MonoBehaviour {
 		GameObject collidedWith = coll.gameObject;
 		if ( collidedWith.tag == "Apple" ) {
 			Destroy( collidedWith );
+		}
+
+		int score = int.Parse (scoreText.text);
+		score += 100;
+		scoreText.text = score.ToString ();
+
+		if (score > HighScore.score) {
+			HighScore.score = score;
 		}
 	}
 }
