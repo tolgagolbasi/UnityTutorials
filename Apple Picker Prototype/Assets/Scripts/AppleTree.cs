@@ -39,6 +39,8 @@ public class AppleTree : MonoBehaviour {
 	{
 		GameObject apple = Instantiate (applePrefab) as GameObject;
 		apple.transform.position = transform.position;
+		Rigidbody appleRigidbody = apple.GetComponent<Rigidbody> ();
+		appleRigidbody.velocity = new Vector3((Random.value * 10) - 5, (Random.value * 10) - 5, 0);
 	}
 	
 	// Update is called once per frame
@@ -58,15 +60,18 @@ public class AppleTree : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		if (Random.value < chanceToChangeDirections) {
+		Vector3 position = transform.position;
+		if (Random.value < chanceToChangeDirections && (position.x > -10 && position.x < 10) ) {
 			speed = (-1) * speed;
 		}
 	}
 
 	void LevelUp(){
-
-		speed *= 1.1f;
-		chanceToChangeDirections *= 1.1f;
-		secondsBetweenAppleDrops /= 1.1f;
+		if (secondsBetweenAppleDrops > 0.25f) {
+			CancelInvoke ();
+			speed *= 1.1f;
+			secondsBetweenAppleDrops /= 1.1f;
+			InvokeRepeating ("DropApple", 1f, secondsBetweenAppleDrops);
+		}
 	}
 }

@@ -38,6 +38,7 @@ public class HighScore : MonoBehaviour {
 			PlayerPrefs.SetInt (highScoreKey, score);
 			PlayerPrefs.SetString (highScorePlayerKey, currentPlayerName);
 			PlayerPrefs.SetInt (isPlayerHasHighestScoreKey, 1);
+			highScorePlayerName = currentPlayerName;
 		}
 
 	}
