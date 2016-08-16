@@ -50,6 +50,8 @@
      <Compile Include="Assets\Scripts\AppleTree.cs" />
      <Compile Include="Assets\Scripts\Basket.cs" />
      <Compile Include="Assets\Scripts\HighScore.cs" />
+     <Compile Include="Assets\Scripts\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\MainMenuHighScore.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
