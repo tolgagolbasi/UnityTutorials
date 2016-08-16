@@ -8,7 +8,6 @@ public class Basket : MonoBehaviour {
 	void Start(){
 		GameObject scoreGO = GameObject.Find ("ScoreCounter");
 		scoreText = scoreGO.GetComponent<Text>();
-		scoreText.text = "0";
 	}
 
 	void Update () {
