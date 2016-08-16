@@ -32,7 +32,7 @@ public class ApplePicker : MonoBehaviour {
 		Destroy (basketToRemove);
 
 		if (basketList.Count == 0) {
-			Application.LoadLevel ("MainMenu");
+			Application.LoadLevel ("GameOver");
 		}
 	}
 }

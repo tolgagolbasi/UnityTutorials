@@ -19,6 +19,7 @@ public class MainMenu : MonoBehaviour {
 
 	public void StartGame() {
 		PlayerPrefs.SetString (currentPlayerKey, currentPlayerName);
+		PlayerPrefs.SetInt (HighScore.isPlayerHasHighestScoreKey, 0);
 		Application.LoadLevel ("_Scene_0");
 	}
 

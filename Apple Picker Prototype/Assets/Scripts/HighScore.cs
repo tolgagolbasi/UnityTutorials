@@ -6,6 +6,7 @@ public class HighScore : MonoBehaviour {
 
 	static public string highScoreKey = "ApplePickerHighScore";
 	static public string highScorePlayerKey = "ApplePickerHighScorePlayer";
+	static public string isPlayerHasHighestScoreKey = "ApplePickerIsHighScorePlayer";
 	static public int score = 0;
 	public string highScorePlayerName = "Unknown";
 	public string currentPlayerName = "Unknown";
@@ -36,6 +37,7 @@ public class HighScore : MonoBehaviour {
 		if (score > PlayerPrefs.GetInt (highScoreKey)) {
 			PlayerPrefs.SetInt (highScoreKey, score);
 			PlayerPrefs.SetString (highScorePlayerKey, currentPlayerName);
+			PlayerPrefs.SetInt (isPlayerHasHighestScoreKey, 1);
 		}
 
 	}
